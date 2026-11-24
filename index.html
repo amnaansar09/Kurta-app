@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aasani – Adaptive Everyday Wear</title>
+  <meta name="description" content="Modular adaptive kurtas for older women. Traditional clothing, designed around changing abilities.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#home" class="brand" aria-label="Aasani home">
+        <span class="brand-mark" aria-hidden="true">آ</span>
+        <span><strong>Aasani</strong><small>Adaptive Everyday Wear</small></span>
+      </a>
+      <div class="a11y-tools" role="group" aria-label="Reading options">
+        <span class="a11y-label">Text size</span>
+        <button type="button" data-size="1" aria-pressed="true">A</button>
+        <button type="button" data-size="2" aria-pressed="false" class="lg">A</button>
+        <button type="button" data-size="3" aria-pressed="false" class="xl">A</button>
+        <button type="button" id="contrastBtn" aria-pressed="false">High contrast</button>
+      </div>
+    </div>
+    <nav class="wrap main-nav" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#finder">Find my fit</a>
+      <a href="#design">Design a kurta</a>
+      <a href="#collection">Collection</a>
+      <a href="#guide">Dressing guide</a>
+      <a href="#saved">Saved <span id="savedCount" class="count" hidden></span></a>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <!-- HOME -->
+    <section data-view="home" aria-labelledby="h-home">
+      <div class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">Modular adaptive kurtas for older women</p>
+          <h1 id="h-home">Traditional clothing.<br>Designed around changing abilities.</h1>
+          <p class="lead">Aasani keeps the kurta you love and changes how it goes on. No lifting your arms overhead, no reaching behind, no fiddly buttons. The clothing adapts to you.</p>
+          <div class="btn-row">
+            <a class="btn primary" href="#finder">Find my fit</a>
+            <a class="btn" href="#design">Design a kurta</a>
+          </div>
+        </div>
+        <div class="hero-art" id="heroArt"></div>
+      </div>
+
+      <h2>Five design principles</h2>
+      <ul class="principles" id="principles"></ul>
+
+      <h2>Everyday difficulties, designed out</h2>
+      <div class="table-wrap">
+        <table class="solutions">
+          <thead><tr><th scope="col">Difficulty</th><th scope="col">How Aasani helps</th></tr></thead>
+          <tbody>
+            <tr><td>Raising arms</td><td>Front-opening construction</td></tr>
+            <tr><td>Shoulder stiffness</td><td>Wide armholes and relaxed sleeves</td></tr>
+            <tr><td>Painful finger joints</td><td>Concealed magnets or large snaps</td></tr>
+            <tr><td>Reaching behind</td><td>No fastenings at the back, ever</td></tr>
+            <tr><td>Bending</td><td>Every fastening is at the front, within easy reach</td></tr>
+            <tr><td>Changing body shape</td><td>Adjustable side panels</td></tr>
+            <tr><td>Depending on others</td><td>Designed so you can dress yourself wherever possible</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <h2>Who it's for</h2>
+        <p>Women aged 55 and above, women living with arthritis or joint stiffness, women recovering from surgery, and the daughters, sons and caregivers who shop for them.</p>
+        <a class="btn primary" href="#finder">Answer 6 quick questions</a>
+      </div>
+    </section>
+
+    <!-- FIT FINDER -->
+    <section data-view="finder" aria-labelledby="h-finder" hidden>
+      <h1 id="h-finder">Find my fit</h1>
+      <p class="lead">Six simple questions. We'll recommend the Aasani kurta and fastenings that suit your body today.</p>
+      <div id="quiz" class="quiz" aria-live="polite"></div>
+    </section>
+
+    <!-- DESIGNER -->
+    <section data-view="design" aria-labelledby="h-design" hidden>
+      <h1 id="h-design">Design your kurta</h1>
+      <p class="lead">Start from a style, then change any part. Every part is designed to attach, adjust and wash without fiddly handwork.</p>
+      <div class="preset-row" id="presetRow" role="group" aria-label="Start from a style"></div>
+      <div class="designer">
+        <div class="preview-col">
+          <div class="preview-card">
+            <div id="designPreview" class="preview"></div>
+            <p class="preview-name" id="designName"></p>
+            <div class="legend" id="legend"></div>
+          </div>
+          <div class="panel" id="effort"></div>
+          <div class="panel" id="checks"></div>
+          <div class="panel save-panel no-print">
+            <label for="designTitle">Name this design</label>
+            <div class="save-row">
+              <input id="designTitle" type="text" placeholder="e.g. Ammi's summer kurta" maxlength="60">
+              <button class="btn primary" id="saveBtn" type="button">Save</button>
+            </div>
+            <button class="btn" id="printBtn" type="button">Print tailor's spec sheet</button>
+            <p class="status" id="saveStatus" role="status"></p>
+          </div>
+        </div>
+        <form class="controls no-print" id="controls" onsubmit="return false"></form>
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section data-view="collection" aria-labelledby="h-collection" hidden>
+      <h1 id="h-collection">The collection</h1>
+      <p class="lead">Four kurtas, one modular system. Every style can be changed in the designer.</p>
+      <div class="cards" id="collectionCards"></div>
+    </section>
+
+    <!-- GUIDE -->
+    <section data-view="guide" aria-labelledby="h-guide" hidden>
+      <h1 id="h-guide">Seated dressing guide</h1>
+      <p class="lead">Step-by-step help for dressing on a chair, with as little arm and shoulder movement as possible.</p>
+      <div class="tabs" role="tablist" aria-label="Guide">
+        <button role="tab" aria-selected="true" data-tab="full" id="tab-full" aria-controls="guidePanel">Full opening (Ease)</button>
+        <button role="tab" aria-selected="false" data-tab="partial" id="tab-partial" aria-controls="guidePanel" tabindex="-1">Partial opening</button>
+        <button role="tab" aria-selected="false" data-tab="undress" id="tab-undress" aria-controls="guidePanel" tabindex="-1">Taking it off</button>
+        <button role="tab" aria-selected="false" data-tab="caregiver" id="tab-caregiver" aria-controls="guidePanel" tabindex="-1">For caregivers</button>
+      </div>
+      <div id="guidePanel" role="tabpanel" class="guide-panel"></div>
+      <div class="callout warn">
+        <h2>A note on magnets</h2>
+        <p>Aasani magnets are sealed inside fabric pockets and never touch the skin. If you have a pacemaker, ICD or other implanted device, choose the <strong>large snaps</strong>, <strong>soft hook-and-loop</strong> or <strong>ring-pull zip</strong> instead, and check with your doctor.</p>
+      </div>
+    </section>
+
+    <!-- SAVED -->
+    <section data-view="saved" aria-labelledby="h-saved" hidden>
+      <h1 id="h-saved">Saved designs</h1>
+      <p class="lead">Designs are saved on this device only.</p>
+      <div class="cards" id="savedCards"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Aasani</strong> means "ease". Clothing that adapts to the woman, not the other way round.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/kurta-svg.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
